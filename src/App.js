@@ -1,27 +1,27 @@
 import './components/functions/functions'
-import { addDomElement, changeBackgroundColor, countVowels, DOMFunctions, popup, returnRandomString, reverseString, toRomanNumeral, uppercaseAll, uppercaseSome } from './components/functions/functions';
+import { addDomElement, changeBackgroundColor, countVowels, duplicateString, popup, returnRandomString, reverseString, squareNumber, toRomanNumeral, uppercaseAll, uppercaseSome } from './components/functions/functions';
 
+addDomElement()
+duplicateString('hello! nice to meet you. ')
 // popup()
-
 reverseString('oink')
 countVowels('spiderman')
-// toRomanNumeral(6)
 returnRandomString()
 uppercaseAll('this is a lowercase sentence?')
 uppercaseSome('hamburgers are a nutritious meal')
-addDomElement()
 
 function addNewDOMElement() {
   const newElement = document.createElement('p')
+  newElement.setAttribute('id','new-dom')
   const mainElement = (document.getElementById('main'))
-  newElement.innerText = 'im new here! '
-  // console.log(newElement)
+  newElement.innerText = 'im new here!'
   mainElement.appendChild(newElement)
 }
-
-// delDomElement()
-// animation()
-// flipText()
+function delDomElement() {
+  const newElements = document.getElementById('new-dom')
+  newElements.remove()
+}
+squareNumber(8)
 
 function App() {
   return (
@@ -30,6 +30,7 @@ function App() {
 
       <button className='bgcolor-button' name='changeBG' onClick={changeBackgroundColor}>Change background color</button>
       <button className='addDOM-button' name='addDOM' onClick={addNewDOMElement}>Add something!</button>
+      <button className='delDOM-button' name='delDOM' onClick={delDomElement}>Delete something!</button>
       
       </div>
     </div>

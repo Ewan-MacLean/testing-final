@@ -1,6 +1,16 @@
 
 function popup() {
-    alert('OOOIIIIInkkkkkk')
+    alert('WELCOME!!!')
+}
+
+function duplicateString(str) {
+    let strArr = str.split(' ')
+    let newArr = []
+    for (let i=0;i<strArr.length;i++) {
+        newArr.push(strArr[i])
+    }
+    strArr.push(newArr.join(' '))
+    console.log(strArr.join(' '))
 }
 
 function reverseString(str) {
@@ -27,30 +37,6 @@ function countVowels(str) {
     }
     console.log('there are ' + numVowels + ' vowels in the string: ' + str)
 }
-
-// function toRomanNumeral(num) {
-//     const index = {
-//         I :1,
-//         II :2,
-//         III :3,
-//         IV :4,
-//         V :5,
-//         VI :6,
-//         VII :7,
-//         VIII :8,
-//         IX : 9,
-//         X : 10
-//     }
-
-//     for (key in index) {
-//         result += key.repeat(Math.floor(num / index[key]));
-//         num %= index[key];
-//       }
-
-//     let result = ''
-
-//     console.log(result)
-// }
 
 function returnRandomString() {
     const alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
@@ -107,15 +93,10 @@ function addDomElement() {
     });
 }
 
-
-
-function delDomElement(){
+function squareNumber(num) {
+    console.log(num * num)
 }
-
-function animation() {
-    
-}
-
+ 
 function changeBackgroundColor() {
     console.log('changing background color....')
     const body = document.querySelector('#body')
@@ -123,29 +104,19 @@ function changeBackgroundColor() {
     body.style["background-color"] = colors[Math.floor(Math.random() * 4)]
 }
 
-function flipText() {
-
-}
-
-    // document is already ready to go
-// }
 
 
 export {
-    // isReady,
+    duplicateString,
     popup,
     reverseString,
     countVowels,
-    // toRomanNumeral
     returnRandomString,
     uppercaseAll,
     uppercaseSome,
-    // DOMFunctions,
     addDomElement,
-    // delDomElement, 
-    // animation,
+    squareNumber,
     changeBackgroundColor
-    // flipText
 }
 
 
