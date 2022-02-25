@@ -1,41 +1,60 @@
 
-function popup() {
-    alert('WELCOME!!!')
-}
-
 function duplicateString(str) {
-    let strArr = str.split(' ')
-    let newArr = []
-    for (let i=0;i<strArr.length;i++) {
-        newArr.push(strArr[i])
+    if (str.length < 1 || typeof str !== 'string')
+    {
+        return null
     }
-    strArr.push(newArr.join(' '))
-    console.log(strArr.join(' '))
+    else {
+
+        let strArr = str.split(' ')
+        let newArr = []
+        for (let i=0;i<strArr.length;i++) {
+            newArr.push(strArr[i])
+        }
+        strArr.push(newArr.join(' '))
+        console.log(strArr.join(' '))
+        
+        
+        return (strArr.join(' ')) 
+    }
 }
 
 function reverseString(str) {
-    console.log('reverseString on: ' + str)
+    // console.log('reverseString on: ' + str)
+    if (str.length < 1 || typeof str !== 'string')
+    {
+        return null
+    }
+    else {
     const arr = str.split('')
     // console.log(arr)
     const revArr = arr.reverse()
     // console.log(revArr)
-    console.log('result: ' + (revArr.join('')))
-
+    return(revArr.join(''))
+    }
 }
 
 // try and write this with the map method
 function countVowels(str) {
-    const vowels = ['a','e','i','o','u']
-    let numVowels = 0
-    const strArr = str.split('')
-    for (let p=0;p<strArr.length; p++) {
-        for (let i=0;i<vowels.length;i++) {
-            if (strArr[p] == vowels[i]) {
-                numVowels = numVowels + 1
+    if (str.length < 1 || typeof str !== 'string')
+    {
+        return null
+    }
+    else {
+        const vowels = ['a','e','i','o','u']
+        let numVowels = 0
+        const strArr = str.split('')
+        for (let p=0;p<strArr.length; p++) {
+            for (let i=0;i<vowels.length;i++) {
+                if (strArr[p] == vowels[i]) {
+                    numVowels = numVowels + 1
+                }
             }
         }
+        return numVowels
     }
-    console.log('there are ' + numVowels + ' vowels in the string: ' + str)
+    // console.log('there are ' + numVowels + ' vowels in the string: ' + str)
+    
 }
 
 function returnRandomString() {
@@ -54,16 +73,28 @@ function returnRandomString() {
             randomStrArr.push(numbers[randomNum123])
         }
     }
-    console.log(randomStrArr.join(''))
+    return(randomStrArr.join(''))
 }
 
 function uppercaseAll(str) {
-    const myString = str.toUpperCase()
-    console.log(str)
-    console.log(myString)
+    if (str.length < 1 || typeof str !== 'string')
+    {
+        return null
+    }
+    else {
+        const myString = str.toUpperCase()
+        console.log(str)
+        console.log(myString)
+        return myString
+    }
 }
 
 function uppercaseSome(str) {
+    if (str.length < 1 || typeof str !== 'string')
+    {
+        return null
+    }
+    else {
     console.log(str)
     const strArr = str.split('')
     const newStr = []
@@ -76,46 +107,45 @@ function uppercaseSome(str) {
             newStr.push(strArr[i])
         }
     }
-    console.log(newStr.join(''))
-
+    return (newStr.join(''))
 }
-
-
-function addDomElement() {
-
-        document.addEventListener("DOMContentLoaded", function(event) {
-            // console.log("DOM fully loaded and parsed");
-            const newElement = document.createElement('p')
-            const mainElement = (document.getElementById('main'))
-            newElement.innerText = 'im new here! (first)'
-            mainElement.appendChild(newElement)
-        
-    });
-}
-
-function squareNumber(num) {
-    console.log(num * num)
 }
  
 function changeBackgroundColor() {
     console.log('changing background color....')
-    const body = document.querySelector('#body')
-    const colors = ["red","yellow","white","slateblue","green"]
-    body.style["background-color"] = colors[Math.floor(Math.random() * 4)]
+    const myBody = document.querySelector('#body')
+    const colors = ["red","yellow","slateblue","green","darkcyan"]
+    myBody.style["background-color"] = colors[Math.floor(Math.random() * 5)]
 }
 
 
+// function addNewDOMElement() {
+        
+//         window.addEventListener('DOMContentLoaded', (event) => {
+//             console.log('DOM fully loaded and parsed');
+//             const newElement = document.createElement('p')
+//             newElement.setAttribute('id','new-dom')
+//             const mainElement = (document.getElementById('new-elements'))
+//             newElement.innerText = `I'm new here!`
+//             mainElement.appendChild(newElement)
+//         })
+// }
+    
+
+
+// function delDomElement() {
+//         const newElements = document.getElementById('new-dom')
+//         newElements.remove()
+//     }
 
 export {
+    // addNewDOMElement,
     duplicateString,
-    popup,
     reverseString,
     countVowels,
     returnRandomString,
     uppercaseAll,
     uppercaseSome,
-    addDomElement,
-    squareNumber,
     changeBackgroundColor
 }
 
